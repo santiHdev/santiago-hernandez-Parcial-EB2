@@ -1,0 +1,32 @@
+server:
+    port: 9090
+
+spring:
+    cloud:
+        gateway:
+            default-filters:
+                - TokenRelay
+            routes:
+                - id: elaparato
+                  predicates:
+                      - Path=/elaparato/**
+                  uri: http://localhost:8086
+                - id: keycloak-admin
+                  predicates:
+                      - Path=/admin/**
+                  uri: http://localhost:8181
+
+    security:
+        oauth2:
+            client:
+                provider:
+                    keycloak-test:
+                        issuer-uri: http://localhost:8080/realms/el-aparato-santiago-hernandez
+                registration:
+                    keycloak-test:
+                        authorization-grant-type: authorization_code
+                        client-id: gateway-client
+                        client-secret: tV1mAk2HBPyyoE6UdWc9IuPH9wVxlPZY
+                        redirect-uri: http://localhost:9090/login/oauth2/code/keycloak
+                        scope:
+                            - openid

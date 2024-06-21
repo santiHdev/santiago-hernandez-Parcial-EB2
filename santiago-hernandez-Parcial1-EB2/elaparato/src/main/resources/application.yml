@@ -1,0 +1,27 @@
+server:
+  port: 8086
+  servlet:
+    context-path: /elaparato/
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: usr
+    url: jdbc:mysql://localhost:3380/elaparato
+    password: pwd-usr
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sql:
+    init:
+      data-locations: classpath:data.sql
+  application:
+    name: elaparato
+  security:
+   oauth2:
+     resourceserver:
+       jwt:
+         issuer-uri: http://localhost:8080/realms/el-aparato-santiago-hernandez
+

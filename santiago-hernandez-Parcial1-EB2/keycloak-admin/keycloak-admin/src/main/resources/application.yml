@@ -1,0 +1,13 @@
+server:
+  port: 8181
+
+spring:
+  application:
+    name: keycloak-admin
+
+elaparato:
+  keycloak:
+    serverUrl: http://localhost:8080
+    realm: el-aparato-santiago-hernandez
+    clientId: administracion-usuarios
+    clientSecret: utU3kzQ6HNbMqKj4yGDrTdKt4TrmwpGU
