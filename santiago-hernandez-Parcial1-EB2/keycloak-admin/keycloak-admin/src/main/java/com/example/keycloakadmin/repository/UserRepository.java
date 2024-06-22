@@ -1,5 +1,7 @@
 package com.example.keycloakadmin.repository;
 
+
+
 import com.example.keycloakadmin.model.User;
 import lombok.RequiredArgsConstructor;
 import org.keycloak.admin.client.Keycloak;
@@ -19,6 +21,8 @@ public class UserRepository implements IUserRepository{
 
     @Value("${elaparato.keycloak.realm}")
     private String realm;
+
+
 
     @Override
     public List<User> findAll() {

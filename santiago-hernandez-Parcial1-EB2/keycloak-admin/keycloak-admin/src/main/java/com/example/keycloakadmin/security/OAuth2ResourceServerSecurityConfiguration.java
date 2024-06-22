@@ -38,5 +38,4 @@ public class OAuth2ResourceServerSecurityConfiguration  {
     public UserDetailsService userDetailsService() {
         return new CustomUserDetailsService();
     }*/
-
 }
